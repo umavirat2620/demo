@@ -1,0 +1,17 @@
+<div class="container">
+  <form [formGroup]="form" (submit)="onSubmit()" >
+    <div class="form-group">
+      <h1 class="text-center ">Schema Of The Day</h1>
+      <div class="input-group-prepend">
+        <input [formControlName]="'plan'" type="text"  class="form-control" placeholder="Add Plan" name="plan">
+        <span class="input-group-text" (click)="onSubmit()">
+    <i class="material-icons">add </i></span>
+      </div>
+    </div>
+    <div class="data">
+      <ul class="list-unstyled">
+        <li [@moveInLeft]  *ngFor="let plan of schema; let i = index">{{plan}} <i (click)="onDeleteItem(i)" class="material-icons">delete</i></li>
+      </ul>
+    </div>
+  </form>
+</div>
